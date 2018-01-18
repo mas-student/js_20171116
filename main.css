@@ -1,0 +1,32 @@
+.js-app {
+    width: 200px;
+}
+.msgs {
+}
+.msg {
+    width: 120px;
+    border-radius: 8px;
+    margin: 8px;
+}
+.msg_sended {
+    float: right;
+    background-color: green;
+}
+.msg_received {
+    float: left;
+    background-color: lightblue;
+}
+.singleline input {
+    width: 50%;
+}
+.multiline textarea {
+    width: 75%;
+}
+.button {
+    width: 100%;
+    height: 28px;
+    border-radius: 2px;
+
+    background-color: lightgray;
+    margin-top: 8px;
+}

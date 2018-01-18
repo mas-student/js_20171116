@@ -12,8 +12,12 @@ class App extends Block {
     }
 
     render() {
+        let body = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
         this.node.innerHTML = template({
-            name: 'Чатик',
+            space: ' ',
+            he: 'Василий Пупкин',
+            you: 'Вы',
+            body: body,
             nums: [1,2,3,4]
         });
 
@@ -47,4 +51,3 @@ window.addEventListener('DOMContentLoaded', () => {
     let app = new App(document.querySelector('.js-app'));
     app.render();
 });
-

@@ -1,3 +1,29 @@
 div.chat
     div.chat_container
-        div.chat__inner #{name}
+        div.chat__inner
+            div.messages
+                div.message.message_receive
+                    div.message__header #{he}
+                    div.message__body #{body}
+                div.message.message_send
+                    div.message__header #{you}
+                    div.message__body #{body}
+                div.message.message_receive
+                    div.message__header #{he}
+                    div.message__body #{body}
+                div.message.message_send
+                    div.message__header #{you}
+                    div.message__body #{body}
+                div.message.message_receive
+                    div.message__header #{he}
+                    div.message__body #{body}
+                div.message.message_send
+                    div.message__header #{you}
+                    div.message__body #{body}
+        div.chat__footer
+            div.message-create
+                div.message-create__textarea.js-textarea
+                div.message-create__submit.js-submit
+            div.auth
+                div.auth__name.js-name
+                div.auth__submit.js-submit-name
