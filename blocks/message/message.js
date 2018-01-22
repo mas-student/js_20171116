@@ -5,17 +5,19 @@ import template from './message.pug';
 import './message.scss';
 
 export default class Message extends Block {
-    
+
     constructor(node, options = {}) {
-        super(node, options);
+        let div = document.createElement('div');
+        node.appendChild(div);
+        super(div, options);
     }
-    
+
     render() {
         this.node.innerHTML = template({
-            user: "Василий Пупкин",
-            message: "Lorem123 4123  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            user: this.options.user,
+            message: this.options.message,
             isOwner: false
         });
     }
-    
+
 }

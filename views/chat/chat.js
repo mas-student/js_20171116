@@ -21,8 +21,30 @@ export default class Chat extends View {
         this.form = new MessageCreate(document.querySelector('.js-form'));
         this.form.render();
 
-        this.messages = new Message(this.node.querySelector('.js-list'));
-        this.messages.render();
+        this.messages = []
+
+        // this.messages = new Message(this.node.querySelector('.js-list'),
+        //     {user: 'me', message: 'dsafsfda'});
+        // this.messages.render();
+
+        this.form.textarea.onPress = (evt) => {
+                if (evt.key == 'Enter' && evt.ctrlKey)
+                    this.send();
+            };
+        this.form.button.onClick = () => { this.send() };
+    }
+
+    send() {
+        let user = User.load();
+        // alert('Отправлено ' +    this.form.textarea.node.children[0].value);
+        let text = this.form.textarea.node.children[0].value;
+        this.form.textarea.node.children[0].value = '';
+
+        let message = new Message(this.node.querySelector('.js-list'),
+            {user: user.name, message: text});
+        message.render();
+
+        this.messages.push(message);
     }
 
 }
